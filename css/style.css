@@ -1,0 +1,165 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Comfortaa', cursive;
+}
+
+.container {
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
+  display: grid;
+  grid-template-areas: 
+    'to-do to-do to-do to-do to-do'
+    'tasks tasks tasks tasks done';
+}
+
+.to-do {
+  grid-area: to-do;
+  background-color: #7e64cf;
+  text-align: center;
+  padding: 10px 15vw 20px 15vw;
+  color: #fff;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 10px;
+}
+
+.text {
+  width: 100%;
+  height: 50px;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.btn-save {
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #7e64cf;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.tasks {
+  grid-area: tasks;
+  padding: 10px 3vw 10px 15vw;
+  background-color: #5871f2;
+  grid-row: 100vh;
+}
+
+.tasks h2 {
+  color: #fff;
+}
+
+.list {
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.item span {
+  align-self: flex-end;
+}
+
+.btn-done, .btn-del {
+  width: auto;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: #fff;  
+  cursor: pointer;
+} 
+
+.btn-done {  
+  background-color: #5871f2;
+  margin: 10px 3px 5px 5px;
+}
+
+.btn-del {
+  background-color: #d74b40;
+  margin: 10px 5px 5px 0;
+}
+
+.done {
+  grid-area: done;
+  padding: 10px 15vw 10px 3vw;
+  height: 100vh;
+  grid-row: 100vh;
+}
+
+.done h2 {
+  color: #5871f2;
+}
+
+.list-done {
+  padding: 0;
+}
+
+.item-done {
+  border-bottom: 3px solid #5871f2;
+  display: flex;
+  flex-direction: column;  
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.item-done span {
+  align-self: flex-end;
+}
+
+.error {
+	color: #d74b40;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-areas: 
+      'to-do'
+      'tasks'
+      'done';
+  }
+
+  .to-do {    
+    padding: 10px 10vw 20px 10vw;
+  }
+
+  .tasks {
+    padding: 10px 10vw 10px 10vw;
+    height: auto;
+  }
+
+  .done {
+    padding: 10px 10vw 10px 10vw;
+    height: auto;
+  }
+}
